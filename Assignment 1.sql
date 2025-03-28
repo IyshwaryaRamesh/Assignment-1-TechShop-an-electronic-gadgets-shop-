@@ -192,7 +192,7 @@ FROM Orders o;
 
 select OrderID from orders;
 
---9)Delete all orders and their associated order details for a specific customer from the Orders and OrderDetails tables.
+--Delete all orders and their associated order details for a specific customer from the Orders and OrderDetails tables.
 DECLARE @CustomerID INT;
 SET @CustomerID = 1;  
 DELETE FROM OrderDetails WHERE OrderID IN (SELECT OrderID FROM Orders WHERE CustomerID = @CustomerID);
@@ -321,7 +321,7 @@ JOIN Customers c ON o.CustomerID = c.CustomerID
 GROUP BY c.CustomerID, c.FirstName, c.LastName
 ORDER BY TotalSpent DESC;
 
---Calculate the average order value (total revenue ÷ number of orders)
+--Calculate the average order value (total revenue Ã· number of orders)
 SELECT AVG(TotalAmount) AS AvgOrderValue FROM Orders;
 
 -- Find the total number of orders placed by each customer
